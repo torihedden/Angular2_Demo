@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <h1>{{name}}</h1>
     <div><a href="{{docLink}}">Documentation</a></div>
     <div><h2>{{title}}</h2></div>
-    <div *ngFor="let employee of employees" class="employee-card">
+    <div *ngFor="let employee of employees" class="employee-card" (click)="onselect(employee)">
       <div>id: {{employee.id}}</div>
       <label>First name:</label>
       <input [(ngModel)]="employee.firstName" placeholder="{{employee.firstName}}">
@@ -26,9 +26,9 @@ import { Component } from '@angular/core';
     }
     `]
 })
-export class AppComponent { name     = 'Angular 2.4.10'
-                            docLink  = 'https://v2.angular.io/docs/ts/latest/guide/learning-angular.html'
-                            title    = 'Employee List',
+export class AppComponent { name     = 'Angular 2.4.10';
+                            docLink  = 'https://v2.angular.io/docs/ts/latest/guide/learning-angular.html';
+                            title    = 'Employee List';
                             employees = EMPLOYEES;
                           }
 
